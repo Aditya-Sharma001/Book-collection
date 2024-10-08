@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <title>Book Collection</title>
+</head>
+<body>
+    <h1>Book Collections</h1>
+    <nav>
+        <a href="{% url 'book_list' %}">Books</a>
+        <a href="{% url 'author_list' %}">Authors</a>
+    </nav>
+    <div>
+        {% block content %}{% endblock  %}    
+    </div>
+</body>
+</html>

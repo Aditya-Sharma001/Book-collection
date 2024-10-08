@@ -1,0 +1,14 @@
+{% extends "library/base.html" %}
+{% block content %}
+<h2>Books</h2>
+<a href="{% url 'book_create'%}">Add Book</a>
+<ul>    
+    {% for book in books %}
+    <li>
+        {{ book.title}} by {{ book.authors.all|join:", "}}
+        <a href="{% url 'book_edit' book.id %}">Edit</a>
+        <a href="{% url 'book_delete' book.id %}">Delete</a>
+    </li>
+    {% endfor %} 
+</ul>
+{% endblock %}       
